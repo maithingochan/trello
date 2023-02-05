@@ -1,20 +1,56 @@
 @import 'setting.scss';
 
 .board-columns {
+  height: $board-content-height;
     display: flex;
-    margin: 0 $gap $gap;
+    //margin: 0 10px $gap;
     overflow-x: auto;
     overflow-y: hidden;
-    &::-webkit-scrollbar {
+    &::after {
+      content: '';
+      flex: $gap;
+    }
+    &::-webkit-scrollbar { 
         -webkit-appearance: none;
-    }
-    &::-webkit-scrollbar:horizontal {
+    }&::-webkit-scrollbar:horizontal { 
         height: 11px;
-    }
-    &::-webkit-scrollbar-thumb {
-        background-color: $common-element-bg-color;
+    }&::-webkit-scrollbar-thumb { 
+        background-color: rgba(255, 255, 255, 0.24);
         border-radius: 8px;
     }
+    .column-drop-preview {
+        background-color: rgba(150, 150, 200, 0.1);
+        border: 1px dashed #abc;
+        margin: 5px 0px 5px 5px;
+    }
+    .add-new-column{
+      width: 250px;
+      max-width: 250px;
+      line-height: 32px;
+      padding: 4px 0 4px 15px;
+      cursor: pointer;
+      color: white;
+      margin-left: $gap;
+      border-radius: $column-border-radius;
+      font-size: 15px;
+      background-color: hsla(0, 0%, 100%, 0.24);
+      &:hover {
+        background-color: hsla(0, 0%, 100%,  .34);
+      }
+    }
 
-    
+    .enter-new-column {
+      width: 250px;
+      max-width: 250px;
+      background-color: $list-bg-color;
+      line-height: 32px;
+      padding: 4px 10px;
+      margin-left: $gap;
+      border-radius: $column-border-radius;
+      input.input-enter-new-column {
+        margin: 5px 0;
+       
+       }  
+      
+    }
 }
