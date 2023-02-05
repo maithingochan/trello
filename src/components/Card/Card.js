@@ -5,11 +5,11 @@ import './Card.scss'
 export default function Card(props) {
   const { card } = props
   return (
-    <li className='card-item'>
+    <div className='card-item'>
       {
-        card.cover && <img src={card.cover} className="card-cover" alt="anh" />
+        card.cover && <img src={card.cover} className="card-cover" alt="anh" onMouseDown={e => e.preventDefault()} />
       }
       {card.title}
-    </li>
+    </div>
   )
 }
